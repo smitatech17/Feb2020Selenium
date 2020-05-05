@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="2" guice-stage="DEVELOPMENT" name="Failed suite [My Sample Test Suite]" parallel="tests">
+  <test thread-count="2" name="My Sample Contacts Test - firefox(failed)" parallel="classes">
+    <parameter name="headless" value="yes"/>
+    <parameter name="browser" value="firefox"/>
+    <parameter name="url" value="http://www.google.com"/>
+    <classes>
+      <class name="TestNGSessions.HomeTest">
+        <methods>
+          <include name="tearDown"/>
+          <include name="header"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- TestNGSessions.HomeTest -->
+      <class name="TestNGSessions.ContactsTest">
+        <methods>
+          <include name="tearDown"/>
+          <include name="createContactTest"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- TestNGSessions.ContactsTest -->
+    </classes>
+  </test> <!-- My Sample Contacts Test - firefox(failed) -->
+</suite> <!-- Failed suite [My Sample Test Suite] -->
